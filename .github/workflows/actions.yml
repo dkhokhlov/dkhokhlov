@@ -124,7 +124,7 @@ jobs:
           plugin_followup: yes
           plugin_languages: yes
           plugin_languages_indepth: yes
-          commits_authoring: Dmitri Khokhlov, dkhokhlov, dkhokhlov@gmail.com, dmitri.khokhlov@logdna.com
+          commits_authoring: Dmitri Khokhlov, dkhokhlov, dkhokhlov@gmail.com, dmitri.khokhlov@logdna.com, dmitri.khokhlov@mezmo.com
           
   repositories:
     runs-on: ubuntu-latest
