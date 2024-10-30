@@ -129,7 +129,7 @@
                     <rect mask="url(#languages-bar)" x="308.20872986189033" y="0" width="57.51895718184212" height="8" fill="#f1e05a"/>
                     <rect mask="url(#languages-bar)" x="365.7276870437325" y="0" width="29.37439222042139" height="8" fill="#b07219"/>
                     <rect mask="url(#languages-bar)" x="395.1020792641539" y="0" width="24.22313648893876" height="8" fill="#89e051"/>
-                    <rect mask="url(#languages-bar)" x="419.3252157530926" y="0" width="23.422792946293757" height="8" fill="#ededed"/>
+                    <rect mask="url(#languages-bar)" x="419.3252157530926" y="0" width="23.422792946293757" height="8" fill="#427819"/>
                     <rect mask="url(#languages-bar)" x="442.74800869938633" y="0" width="8.93759437033343" height="8" fill="#f34b7d"/>
                     <rect mask="url(#languages-bar)" x="451.6856030697198" y="0" width="8.314396930280235" height="8" fill="#384d54"/>
                 </svg>
@@ -166,7 +166,7 @@
                     </div>
                     <div class="field center no-wrap language">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                            <path fill="#ededed" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
+                            <path fill="#427819" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
                         </svg>
                         Makefile
                     </div>
