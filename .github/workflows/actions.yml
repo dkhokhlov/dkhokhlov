@@ -16,6 +16,7 @@ jobs:
           filename: achievements.svg
           token: ${{ secrets.METRICS_TOKEN }}
           committer_token: ${{ secrets.GITHUB_TOKEN }}
+          timeout-minutes: 5
           user: dkhokhlov
           base: achievements
           plugin_achievements: yes
