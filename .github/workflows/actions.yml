@@ -10,15 +10,21 @@ jobs:
 
   achievements:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - uses: lowlighter/metrics@latest
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Generate achievements metrics
+        uses: lowlighter/metrics@latest
         with:
           filename: achievements.svg
           token: ${{ secrets.METRICS_TOKEN }}
           committer_token: ${{ secrets.GITHUB_TOKEN }}
-          timeout-minutes: 5
           user: dkhokhlov
-          base: achievements
+          base: ""
           plugin_achievements: yes
           plugin_achievements_threshold: B      # Display achievements with rank B or higher
           plugin_achievements_secrets: yes      # Display unlocked secrets achievements
@@ -27,8 +33,15 @@ jobs:
 
   github-metrics:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - uses: lowlighter/metrics@latest
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Generate header metrics
+        uses: lowlighter/metrics@latest
         with:
           filename: header.svg
           # You'll need to setup a personal token in your secrets.
@@ -43,8 +56,15 @@ jobs:
           config_timezone: America/Los_Angeles
   lines:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - uses: lowlighter/metrics@latest
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Generate lines of code metrics
+        uses: lowlighter/metrics@latest
         with:
           filename: lines-of-code.svg
           token: ${{ secrets.METRICS_TOKEN }}
@@ -54,8 +74,15 @@ jobs:
 
   acti_comm:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - uses: lowlighter/metrics@latest
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Generate activity and community metrics
+        uses: lowlighter/metrics@latest
         with:
           filename: acti_comm.svg
           # You'll need to setup a personal token in your secrets.
@@ -71,8 +98,15 @@ jobs:
           
   iso_calender:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - uses: lowlighter/metrics@latest
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Generate isometric calendar metrics
+        uses: lowlighter/metrics@latest
         with:
           filename: iso_calender.svg
           # You'll need to setup a personal token in your secrets.
@@ -90,8 +124,15 @@ jobs:
 
   habits:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - uses: lowlighter/metrics@latest
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Generate coding habits metrics
+        uses: lowlighter/metrics@latest
         with:
           filename: github-habits.svg
           token: ${{ secrets.METRICS_TOKEN }}
@@ -108,8 +149,15 @@ jobs:
 
   issue_pr_lang:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - uses: lowlighter/metrics@latest
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Generate issues, PRs, and languages metrics
+        uses: lowlighter/metrics@latest
         with:
           filename: issue_pr_lang.svg
           # You'll need to setup a personal token in your secrets.
@@ -129,8 +177,15 @@ jobs:
           
   repositories:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - uses: lowlighter/metrics@latest
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Generate repositories metrics
+        uses: lowlighter/metrics@latest
         with:
           filename: repositories.svg
           # You'll need to setup a personal token in your secrets.
