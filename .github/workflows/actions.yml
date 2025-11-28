@@ -18,18 +18,19 @@ jobs:
         with:
           persist-credentials: true
       - name: Generate achievements metrics
-        uses: lowlighter/metrics@latest
+        uses: dkhokhlov/metrics@master
         with:
           filename: achievements.svg
           token: ${{ secrets.METRICS_TOKEN }}
           committer_token: ${{ secrets.GITHUB_TOKEN }}
           user: dkhokhlov
           base: ""
+          template: classic
           plugin_achievements: yes
-          plugin_achievements_threshold: B      # Display achievements with rank B or higher
-          plugin_achievements_secrets: yes      # Display unlocked secrets achievements
-          plugin_achievements_display: compact  # Use compact display
-          plugin_achievements_limit: 0          # Display all unlocked achievements (no limit)
+          plugin_achievements_threshold: C
+          plugin_achievements_secrets: yes
+          plugin_achievements_display: compact
+          plugin_achievements_limit: 0
 
   github-metrics:
     runs-on: ubuntu-latest
@@ -41,7 +42,7 @@ jobs:
         with:
           persist-credentials: true
       - name: Generate header metrics
-        uses: lowlighter/metrics@latest
+        uses: dkhokhlov/metrics@master
         with:
           filename: header.svg
           # You'll need to setup a personal token in your secrets.
@@ -64,7 +65,7 @@ jobs:
         with:
           persist-credentials: true
       - name: Generate lines of code metrics
-        uses: lowlighter/metrics@latest
+        uses: dkhokhlov/metrics@master
         with:
           filename: lines-of-code.svg
           token: ${{ secrets.METRICS_TOKEN }}
@@ -82,7 +83,7 @@ jobs:
         with:
           persist-credentials: true
       - name: Generate activity and community metrics
-        uses: lowlighter/metrics@latest
+        uses: dkhokhlov/metrics@master
         with:
           filename: acti_comm.svg
           # You'll need to setup a personal token in your secrets.
@@ -106,7 +107,7 @@ jobs:
         with:
           persist-credentials: true
       - name: Generate isometric calendar metrics
-        uses: lowlighter/metrics@latest
+        uses: dkhokhlov/metrics@master
         with:
           filename: iso_calender.svg
           # You'll need to setup a personal token in your secrets.
@@ -132,7 +133,7 @@ jobs:
         with:
           persist-credentials: true
       - name: Generate coding habits metrics
-        uses: lowlighter/metrics@latest
+        uses: dkhokhlov/metrics@master
         with:
           filename: github-habits.svg
           token: ${{ secrets.METRICS_TOKEN }}
@@ -142,10 +143,11 @@ jobs:
           base: ""
           template: classic
           plugin_habits: yes
-          plugin_habits_from: 200       # Use 200 events to compute habits
-          plugin_habits_days: 14        # Keep only events from last 14 days
+          plugin_habits_from: 100       # Reduced from 200 to avoid rate limits
+          plugin_habits_days: 30        # Increased from 14 to get more data
           plugin_habits_charts: yes     # Display charts section
           plugin_habits_trim: yes       # Trim unused hours on daily chart
+          debug: yes                    # Enable debug to see actual error
 
   issue_pr_lang:
     runs-on: ubuntu-latest
@@ -157,7 +159,7 @@ jobs:
         with:
           persist-credentials: true
       - name: Generate issues, PRs, and languages metrics
-        uses: lowlighter/metrics@latest
+        uses: dkhokhlov/metrics@master
         with:
           filename: issue_pr_lang.svg
           # You'll need to setup a personal token in your secrets.
@@ -185,7 +187,7 @@ jobs:
         with:
           persist-credentials: true
       - name: Generate repositories metrics
-        uses: lowlighter/metrics@latest
+        uses: dkhokhlov/metrics@master
         with:
           filename: repositories.svg
           # You'll need to setup a personal token in your secrets.
