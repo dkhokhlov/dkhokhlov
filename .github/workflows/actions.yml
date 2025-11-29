@@ -147,7 +147,6 @@ jobs:
           plugin_habits_days: 30        # Increased from 14 to get more data
           plugin_habits_charts: yes     # Display charts section
           plugin_habits_trim: yes       # Trim unused hours on daily chart
-          debug: yes                    # Enable debug to see actual error
 
   issue_pr_lang:
     runs-on: ubuntu-latest
